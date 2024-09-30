@@ -1,7 +1,0 @@
-region                = "ap-southeast-1"
-ami                   = "ami-0aa097a5c0d31430a"
-instance_type         = "t2.micro"
-key_name              = "terraform"
-prefix_name           = "Lab04"
-owner                 = "JaegEr"
-env                   = "Test"
