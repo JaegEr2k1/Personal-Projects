@@ -1,0 +1,16 @@
+name: Install Nginx on managed 
+host hosts: webservers
+become: yes
+
+tasks:
+  - name: Ensure Nginx is installed
+    apt:
+      name: nginx 
+      state: present 
+      update_cache: yes
+
+  - name: Start and enable Nginx service
+    systemd:
+      name: nginx 
+      enabled: yes
+      state: started
