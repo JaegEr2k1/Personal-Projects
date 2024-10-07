@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dotnet-app
+  template:
+    metadata:
+      labels:
+        app: dotnet-app
+    spec:
+      containers:
+      - name: dotnet-app
+        image: jaeger2k1/docker_lab:dotnet-app
+        ports:
+        - containerPort: 80
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          value: "Server=mysql;Database=mydatabase;User=root;Password=password123;Port=3306;"
